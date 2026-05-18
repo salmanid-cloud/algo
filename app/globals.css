@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --grain-opacity: .18;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #120b07;
+  color: #fff9ef;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: var(--grain-opacity);
+  mix-blend-mode: soft-light;
+  background-image:
+    radial-gradient(circle at 18% 23%, rgba(255,255,255,.45) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 78% 17%, rgba(255,255,255,.25) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 42% 78%, rgba(0,0,0,.35) 0 1px, transparent 1.6px),
+    linear-gradient(110deg, rgba(255,255,255,.05), rgba(0,0,0,.08));
+  background-size: 92px 92px, 140px 140px, 118px 118px, 100% 100%;
+}
+
+::selection {
+  background: #c9a35b;
+  color: #120b07;
+}
+
+.luxury-container {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+}
+
+.eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.32em] text-brass;
+}
+
+.glass-panel {
+  @apply border border-white/10 bg-ivory/[.06] shadow-luxury backdrop-blur-xl;
+}
+
+.leather-border {
+  position: relative;
+}
+
+.leather-border::after {
+  content: '';
+  position: absolute;
+  inset: .75rem;
+  border: 1px solid rgba(201, 163, 91, .32);
+  pointer-events: none;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
